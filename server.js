@@ -11,11 +11,6 @@ app.use(express.urlencoded({extended: true}));
 // Access 'public' directory files
 app.use(express.static('public'));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-  });
-
 // Route to serve index.html file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
